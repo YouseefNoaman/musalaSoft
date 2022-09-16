@@ -2,7 +2,10 @@ package com.musalaSoft.musalaSoft.helper;
 
 public class Util {
 
-    public boolean checkDroneCode(String s){
+    public boolean checkMedicationCode(String s){
+        if (s.trim().isBlank()){
+            return false;
+        }
         for (char c: s.toCharArray()) {
             if (!isUppercase(c) || !isdigit(c) || !isUnderscoreOnly(c)){
                 return false;
@@ -11,9 +14,12 @@ public class Util {
         return true;
     }
 
-    public boolean checkDroneName(String s){
+    public boolean checkMedicationName(String s){
+        if (s.trim().isBlank()){
+            return false;
+        }
         for (char c: s.toCharArray()) {
-            if (!isUppercase(c) || !isdigit(c) || !isHyphenOnly(c) || !isUnderscoreOnly(c)){
+            if (!isLetter(c) || !isdigit(c) || !isHyphenOnly(c) || !isUnderscoreOnly(c)){
                 return false;
             }
         }
@@ -36,5 +42,8 @@ public class Util {
         return c == '-';
     }
 
+    private boolean isLetter(char c){
+        return Character.isLetter(c);
+    }
 
 }
