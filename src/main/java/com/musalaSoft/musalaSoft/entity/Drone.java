@@ -1,14 +1,11 @@
 package com.musalaSoft.musalaSoft.entity;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import nonapi.io.github.classgraph.json.Id;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -32,8 +29,8 @@ public class Drone {
     String model;
 
     @Max( value = 500, message = "Limit capacity of a drone is 500 grams.")
-    @Column(name="LIMIT", nullable = false)
-    private double limit;
+    @Column(name="WEIGHT_LIMIT", nullable = false)
+    private double weightLimit;
 
     @Max(100)
     @Min(0)

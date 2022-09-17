@@ -1,14 +1,11 @@
 package com.musalaSoft.musalaSoft.entity;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import nonapi.io.github.classgraph.json.Id;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.time.LocalDate;
 
 @Entity
 @Table(name="MEDICATION")

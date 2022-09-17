@@ -4,11 +4,13 @@ import com.musalaSoft.musalaSoft.entity.Drone;
 import com.musalaSoft.musalaSoft.repository.DroneRepository;
 import com.musalaSoft.musalaSoft.service.DroneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Service
 public class DroneServiceIMPL implements DroneService {
     DroneRepository droneRepository;
 
@@ -19,7 +21,7 @@ public class DroneServiceIMPL implements DroneService {
 
     @Override
     public List<Drone> getAllDrones() {
-        return droneRepository.findAll();
+        return (List<Drone>) droneRepository.findAll();
     }
 
     @Override

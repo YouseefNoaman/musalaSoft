@@ -5,11 +5,13 @@ import com.musalaSoft.musalaSoft.helper.Util;
 import com.musalaSoft.musalaSoft.repository.MedicationRepository;
 import com.musalaSoft.musalaSoft.service.MedicationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Service
 public class MedicationServiceIMPL implements MedicationService {
 
     Util util;
@@ -22,7 +24,7 @@ public class MedicationServiceIMPL implements MedicationService {
 
     @Override
     public List<Medication> getAllMedications() {
-        return medicationRepository.findAll();
+        return (List<Medication>) medicationRepository.findAll();
     }
 
     @Override

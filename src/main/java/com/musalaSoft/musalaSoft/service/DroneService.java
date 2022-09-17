@@ -1,11 +1,9 @@
 package com.musalaSoft.musalaSoft.service;
 
 import com.musalaSoft.musalaSoft.entity.Drone;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface DroneService {
     List<Drone> getAllDrones();
     Drone getDroneById(Long id);
