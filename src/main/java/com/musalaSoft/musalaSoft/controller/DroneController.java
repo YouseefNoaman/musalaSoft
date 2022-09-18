@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
-@RestController(value = "/drone")
+@RestController
+@RequestMapping("/drone")
 public class DroneController {
 
     DroneService droneService;

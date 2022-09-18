@@ -41,7 +41,7 @@ public class Drone {
     @Column(name="STATE", nullable = false)
     private String state;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinTable(name = "DRONE_MEDICATION", joinColumns =
             {@JoinColumn(referencedColumnName = "ID")}
             , inverseJoinColumns = {@JoinColumn(referencedColumnName = "ID")})
