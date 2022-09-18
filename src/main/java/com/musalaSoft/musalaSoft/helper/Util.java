@@ -46,4 +46,22 @@ public class Util {
         return Character.isLetter(c);
     }
 
+    public boolean isValidDroneModel(String s){
+        for (DroneModel model: DroneModel.values()) {
+            if (model.name().equals(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isValidDroneState(String s){
+        for (DroneState model: DroneState.values()) {
+            if (model.name().equals(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

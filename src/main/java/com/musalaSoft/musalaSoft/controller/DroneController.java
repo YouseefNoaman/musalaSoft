@@ -1,6 +1,7 @@
 package com.musalaSoft.musalaSoft.controller;
 
 import com.musalaSoft.musalaSoft.entity.Drone;
+import com.musalaSoft.musalaSoft.entity.Medication;
 import com.musalaSoft.musalaSoft.service.DroneService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -58,4 +59,30 @@ public class DroneController {
     ResponseEntity<?> deleteDrone(@RequestBody @Valid Drone drone){
         return new ResponseEntity<>(droneService.deleteDrone(drone), HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("medication/{id}")
+    ResponseEntity<?> getMedicationsByDroneId(@PathVariable @NotBlank Long id){
+        return new ResponseEntity<>(droneService.getMedicationsByDroneId(id), HttpStatus.OK);
+    }
+
+    @GetMapping("batteryLevel/{id}")
+    ResponseEntity<?> getBatteryLevelByDroneId(@PathVariable @NotBlank Long id){
+        return new ResponseEntity<>(droneService.getBatteryLevelByDroneId(id), HttpStatus.OK);
+    }
+
+    @GetMapping("available")
+    ResponseEntity<?> getAvailableDronesToLoad(){
+        return new ResponseEntity<>(droneService.getAvailableDronesToLoad(), HttpStatus.OK);
+    }
+
+    @PatchMapping("addMedication/{id}")
+    ResponseEntity<?> addMedicationToDrone(@PathVariable @NotBlank Long id, @RequestBody @Valid Medication medication){
+        return new ResponseEntity<>(droneService.addMedicationToDrone(id, medication), HttpStatus.CREATED);
+    }
+
+    @PatchMapping("toLoad/{id}")
+    ResponseEntity<?> moveDroneToLoadingState(@PathVariable @NotBlank Long id){
+        return new ResponseEntity<>(droneService.moveDroneToLoadingState(id), HttpStatus.CREATED);
+    }
+
 }

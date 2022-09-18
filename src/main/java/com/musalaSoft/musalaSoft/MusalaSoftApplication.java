@@ -10,9 +10,7 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-@EnableScheduling
 @ComponentScan("com.musalaSoft.musalaSoft")
-@EntityScan("com.musalaSoft.musalaSoft.entity")
 @OpenAPIDefinition(info = @Info(title = "musalasoft drone API", version = "0.0", description = "musalasoft task"))
 public class MusalaSoftApplication {
 
